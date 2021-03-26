@@ -9,7 +9,7 @@ const Content = (props) => {
                 *Warning: Each child in a list should have a unique "key" prop.
                 Se debe agregar un key a cada llamada del componente Part, para esto se puede usar el index o posicion de cada elmento en el array
             */}            
-            {props.parts.map((part, index) => {     
+            {props.course.parts.map((part, index) => {     
                 return (
                     <Part part={part.name} exercise={part.exercises} key={index}/>
                 ) 

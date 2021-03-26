@@ -3,9 +3,17 @@ import Part from './Part';
 const Content = (props) => {
     return(
         <div>
-            <Part part={props.part1.name} exercise={props.part1.exercises}/>
-            <Part part={props.part2.name} exercise={props.part2.exercises}/>
-            <Part part={props.part3.name} exercise={props.part3.exercises}/>
+            {/*
+                Map es un metodo del paradigma de programacion funcional en lugar de un bucle (for, forEach)
+                Map toma cada elemento de un array y lo transforma de forma individual
+                *Warning: Each child in a list should have a unique "key" prop.
+                Se debe agregar un key a cada llamada del componente Part, para esto se puede usar el index o posicion de cada elmento en el array
+            */}            
+            {props.parts.map((part, index) => {     
+                return (
+                    <Part part={part.name} exercise={part.exercises} key={index}/>
+                ) 
+            })}
         </div>
     );
 }
